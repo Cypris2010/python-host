@@ -1,6 +1,4 @@
 from blesuite.connection_manager import BLEConnectionManager
-import gevent
-import time
 
 adapter = 0
 role = 'central'
@@ -25,4 +23,3 @@ with BLEConnectionManager(adapter, role) as connection_manager:
         print "Got error:", write_request.get_error_message()
     elif write_request.has_response():
         print "Got response:", write_request.response.data, "from handle", hex(write_request.handle)
-
