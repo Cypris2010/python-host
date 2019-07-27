@@ -2,7 +2,7 @@ from blesuite.connection_manager import BLEConnectionManager
 import gevent
 import time
 
-adapter = 0
+adapter = ""
 role = 'central'
 timeout_seconds = 10
 
