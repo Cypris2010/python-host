@@ -17,8 +17,12 @@ with BLEConnectionManager(adapter, role) as connection_manager:
     connection_manager.connect(connection)
 
     # write to handle 0x0b
-    write_request = connection_manager.gatt_write_handle_async(connection, 0x16, b"\x57\x01\x00")
+    #write_request = connection_manager.gatt_write_handle_async(connection, 0x16, b"\x57\x01\x00")
     
+    # write to handle 0x0b
+    write_request = connection_manager.gatt_write_handle(connection, 0x16, b"\x57\x01\x00")
     if write_request.has_error():
-        print "Got error:", read_request.get_error_message()
-    
+        print "Got error:", write_request.get_error_message()
+    elif write_request.has_response():
+        print "Got response:", write_request.response.data, "from handle", hex(write_request.handle)
+
