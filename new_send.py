@@ -4,7 +4,8 @@ adapter = 0
 role = 'central'
 timeout_seconds = 10
 
-peer_device_address = "CF:EC:C9:D4:85:39"
+#peer_device_address = "CF:EC:C9:D4:85:39"
+peer_device_address = "F0:18:98:A6:FC:73"
 peer_address_type = "public"
 
 with BLEConnectionManager(adapter, role) as connection_manager:
